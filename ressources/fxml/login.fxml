@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLogin">
+
+    <children>
+
+        <!-- Image de fond -->
+        <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="false">
+            <image>
+                <Image url="@../images/montagne.jpeg" />
+            </image>
+        </ImageView>
+
+        <!-- Bloc de login -->
+        <VBox alignment="CENTER" layoutX="150.0" layoutY="60.0" prefHeight="300.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 10;">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <children>
+
+                <HBox alignment="CENTER" spacing="0">
+                    <children>
+                        <ToggleButton fx:id="boutonAdmin" maxWidth="150.0" onAction="#changerRole" prefHeight="30.0" text="Admin">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="roleGroup" />
+                     </toggleGroup></ToggleButton>
+                        <ToggleButton fx:id="boutonSecouriste" maxWidth="150.0" onAction="#changerRole" prefHeight="30.0" text="Secouriste" toggleGroup="$roleGroup" />
+                    </children>
+                </HBox>
+
+                <Label text="Login" textFill="white">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <TextField fx:id="champNomUtilisateur" promptText="Identifiant" />
+                <PasswordField fx:id="champMotDePasse" promptText="Mot de passe" />
+
+                <Button fx:id="boutonConnexion" onAction="#seConnecter" onMousePressed="#appuyerConnexion" onMouseReleased="#relacherConnexion" text="Connexion" />
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>

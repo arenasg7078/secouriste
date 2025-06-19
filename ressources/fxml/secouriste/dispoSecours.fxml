@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="716.0" prefWidth="1098.0" stylesheets="@../../css/planningSecours.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerDispoSecours">
+   <children>
+      <ImageView fitHeight="771.0" fitWidth="1099.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/montagne.jpeg" />
+         </image>
+      </ImageView>
+      <BorderPane fx:id="mainBorderPane" layoutX="49.0" layoutY="33.0" prefHeight="650" prefWidth="1000" stylesheets="@../../css/planningSecours.css">
+         <left>
+            <VBox fx:id="sidebar" alignment="TOP_CENTER" prefWidth="180" spacing="20" styleClass="sidebar">
+               <children>
+                  <VBox alignment="TOP_LEFT" spacing="2">
+                     <children>
+                        <Label fx:id="labelNomUtilisateur" styleClass="user-name" text="Nom utilisateur" textFill="WHITE" />
+                        <Label fx:id="labelRole" styleClass="user-role" text="Rôle" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="34.0" prefWidth="120.0">
+                     <children>
+                        <Label fx:id="labelMois1" layoutX="351.0" layoutY="-10.0" styleClass="month-label" text="Mois" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="boutonPlanning" onAction="#setPlanning" prefWidth="180" styleClass="sidebar-button" text="Planning" />
+                  <Button fx:id="boutonDispo" onAction="#setDispo" prefWidth="180" styleClass="sidebar-button" text="Disponibilité" />
+                  <Pane VBox.vgrow="ALWAYS" />
+                  <Button fx:id="boutonSeDeconnecter" onAction="#seDeconnecter" styleClass="sidebar-button logout-button" text="Déconnexion" />
+               </children>
+               <padding>
+                  <Insets bottom="20" left="10" right="10" top="20" />
+               </padding>
+            </VBox>
+         </left>
+         <center>
+            <VBox spacing="15" styleClass="content-area">
+               <children>
+                  <Label styleClass="title-label" text="Disponibilités du mois" />
+                  <GridPane fx:id="calendarGrid" hgap="5" prefHeight="552.0" prefWidth="734.0" vgap="5">
+                     <columnConstraints>
+                        <ColumnConstraints percentWidth="14.28" />
+                        <ColumnConstraints percentWidth="14.28" />
+                        <ColumnConstraints percentWidth="14.28" />
+                        <ColumnConstraints percentWidth="14.28" />
+                        <ColumnConstraints percentWidth="14.28" />
+                        <ColumnConstraints percentWidth="14.28" />
+                        <ColumnConstraints percentWidth="14.28" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints percentHeight="16.6" />
+                        <RowConstraints percentHeight="16.6" />
+                        <RowConstraints percentHeight="16.6" />
+                        <RowConstraints percentHeight="16.6" />
+                        <RowConstraints percentHeight="16.6" />
+                        <RowConstraints percentHeight="16.6" />
+                     </rowConstraints>
+                     <children>
+                        <!-- En-têtes des jours -->
+                        <Label styleClass="grid-cell" text="Lun" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label styleClass="grid-cell" text="Mar" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label styleClass="grid-cell" text="Mer" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <Label styleClass="grid-cell" text="Jeu" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                        <Label styleClass="grid-cell" text="Ven" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                        <Label styleClass="grid-cell" text="Sam" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                        <Label styleClass="grid-cell" text="Dim" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+
+                        <!-- Jours du mois en boutons -->
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="1" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="2" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="3" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="4" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="5" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="6" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="7" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="8" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="9" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="10" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="11" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="12" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="13" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="14" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="15" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="16" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="17" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="18" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="19" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="20" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="21" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="22" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="23" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="24" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="25" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="26" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="27" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="28" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="29" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                        <Button onAction="#changerEtatJour" styleClass="jour-neutre" text="30" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+
+                  <HBox alignment="CENTER" spacing="10">
+                     <children>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Button fx:id="boutonPrecedent" onAction="#precedentMois" text="❮" />
+                        <Label fx:id="labelMois" styleClass="week-label" text=" Mois" />
+                        <Button fx:id="boutonSuivant" onAction="#suivantMois" text="❯" />
+                        <Pane prefHeight="26.0" prefWidth="316.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20" left="20" right="20" top="20" />
+               </padding>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

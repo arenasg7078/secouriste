@@ -1,0 +1,49 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.button {
+    -fx-background-color: #3c60f4;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2a47c9;
+}
+
+.login-box {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 10;
+}
+
+.login-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.toggle-button {
+    -fx-background-color: #5f7dfc;
+    -fx-text-fill: white;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+
+.text-field,
+.password-field {
+    -fx-background-radius: 5;
+    -fx-padding: 6 10 6 10;
+    -fx-background-color: white;
+}
+
+.label {
+    -fx-font-size: 16px;
+}
+
+.vbox {
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+    -fx-background-radius: 10;
+}
