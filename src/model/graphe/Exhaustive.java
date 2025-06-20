@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import model.persistence.*;
-
+/**
+ * classe qui fait l'affectation des secouriste avec l'aproche Exhaustive
+ * @author Antoine Rena
+ */
 public class Exhaustive {
 
     public static HashMap<DPS, Secouriste> meilleureAffectation = new HashMap<>();

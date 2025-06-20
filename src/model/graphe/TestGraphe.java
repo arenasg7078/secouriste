@@ -2,7 +2,10 @@ package model.graphe;
 import java.util.ArrayList;
 import java.util.HashMap;
 import model.persistence.*;
-
+/**
+ * classe qui test les classe du package model.graphe
+ * @author Antoine Rena
+ */
 public class TestGraphe {
 
     public static void main(String[] args) {

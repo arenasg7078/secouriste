@@ -3,7 +3,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import model.persistence.Competence;
-
+/**
+ * classe qui vérifie si un graphe est un DAG
+ * @author Antoine Rena
+ */
 public class DAGVerifier {
 
     /**
